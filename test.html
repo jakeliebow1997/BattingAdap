@@ -8,37 +8,123 @@
   	crossorigin="anonymous"></script>
 </head>
 <body>
+	<main role="main">
 
-	<h1> Test </h1>
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      
+    </div>
+    <hr>
+
+  </div> <!-- /container -->
+
+	<div class="container">
+		<!-- <div class="row"> -->
+		<div class="card-columns" id="property-list">
+
+	  	<!-- <div class="card border-danger p-2">
+		  <div class="card-header">This property will be booked</div>
+		  <div class="card-body text-danger">
+		    <h5 class="card-title">Booked through: DATE</h5>
+		    <p class="card-text">Some make up the bulk of the card's content.</p>
+		  </div>
+		</div> -->
+		
+	</div>
+	<!-- </div> -->
+	</div>
+</main>
+
+	<form>
+
 	<script type="text/javascript">
- 		// $(document).ready(function() {
-   //    	alert("jQuery tutorial for beginners Example");
-   //  });
-
-   		/*
-   		$.ajax("https://r2iyrzqdlb.execute-api.us-east-1.amazonaws.com/dev/main", {
-    		type: "POST",
-    		data: JSON.stringify({ data: "1" }),
-    		contentType: "application/json",
-		}).done(function (data) {
-    		//$("#decoded").html(data.decoded);
-    		console.log("suceeded");
-		}).fail(function (xhr, status, error) {
-    		//$("#error").html("Could not reach the API: " + error);
-    		console.log("failed");
-		});
-		*/
+ 	
 
     	$.ajax({
-	       // url: "https://r2iyrzqdlb.execute-api.us-east-1.amazonaws.com/dev/main",
-	        url: "https://eg4el697ye.execute-api.us-east-1.amazonaws.com/dev/main",
+	        url: "https://x9g43y0w24.execute-api.us-east-1.amazonaws.com/dev/main",
 	        type: 'POST',
 	        contentType: 'application/json',
 	        dataType: 'json',
-	        data: "0,10,20,30,4,5,6",
+	        data: "605141.0",
 	        success: function(data) {
 	        	console.log("success");
-	            alert(JSON.stringify(data));
+	        	var h='<div> <table>';
+	        	var y=JSON.stringify(data['FT']);
+	        	//var d=JSON.parse(y)
+	        	h=h+'<tr>'
+	        	h=h+'<th>'
+	        	h=h+'Batter'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'FT'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'KC'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'SL'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'CH'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'FF'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'FC'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'CU'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'SI'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'FS'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+'Batting Adaptability'
+	        	h=h+'</th>'
+	        	h=h+'</tr>'
+	        	h=h+'<tr>'
+	        	h=h+'<th>'
+	        	h=h+'605141.0'
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['FT']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['KC']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['SL']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['CH']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['FF']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['FC']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['CU']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['SI']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['FS']
+	        	h=h+'</th>'
+	        	h=h+'<th>'
+	        	h=h+data['Batting Adaptability']
+	        	h=h+'</th>'
+	        	h=h+'</tr>'
+	        	h=h+'</table> </div>';
+	            $('#property-list').append(h);
+
 	        },
 	        error: function(e) {
 	        	console.log("failed");
@@ -46,9 +132,7 @@
 	        }
     	});
 
-		//curl -H "Content-Type: application/json" -X POST https://r2iyrzqdlb.execute-api.us-east-1.amazonaws.com/dev/main -d '1'
 	</script>
-
-
+</form>
 </body>
 </html>
