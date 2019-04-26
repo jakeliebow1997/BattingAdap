@@ -12,13 +12,6 @@ client = pymongo.MongoClient("mongodb+srv://sah:dude@cluster0-ufrcd.mongodb.net/
 mydb = client["final"]
 mycol = mydb["BA"]
 df=pd.read_csv('data.csv')
-#c = boto3.client(
-#'s3',
-#aws_access_key_id='AKIAJFYPGGLOL4Z3HBHQ',
-#aws_secret_access_key='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'
-#)
-#obj = c.get_object(Bucket='baseballs3', Key='data.csv')
-#data = pd.read_csv(obj['Body'])
 
 def getPlayer(name):
 	mydoc = mycol.find({ "batter": name })
