@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<script
+  	src="https://code.jquery.com/jquery-3.4.0.js"
+  	integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  	crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<h1> Test </h1>
+	<script type="text/javascript">
+ 		// $(document).ready(function() {
+   //    	alert("jQuery tutorial for beginners Example");
+   //  });
+
+   		/*
+   		$.ajax("https://r2iyrzqdlb.execute-api.us-east-1.amazonaws.com/dev/main", {
+    		type: "POST",
+    		data: JSON.stringify({ data: "1" }),
+    		contentType: "application/json",
+		}).done(function (data) {
+    		//$("#decoded").html(data.decoded);
+    		console.log("suceeded");
+		}).fail(function (xhr, status, error) {
+    		//$("#error").html("Could not reach the API: " + error);
+    		console.log("failed");
+		});
+		*/
+
+    	$.ajax({
+	       // url: "https://r2iyrzqdlb.execute-api.us-east-1.amazonaws.com/dev/main",
+	        url: "https://eg4el697ye.execute-api.us-east-1.amazonaws.com/dev/main",
+	        type: 'POST',
+	        contentType: 'application/json',
+	        dataType: 'json',
+	        data: "0,10,20,30,4,5,6",
+	        success: function(data) {
+	        	console.log("success");
+	            alert(JSON.stringify(data));
+	        },
+	        error: function(e) {
+	        	console.log("failed");
+	            alert("failed" + JSON.stringify(e));
+	        }
+    	});
+
+		//curl -H "Content-Type: application/json" -X POST https://r2iyrzqdlb.execute-api.us-east-1.amazonaws.com/dev/main -d '1'
+	</script>
+
+
+</body>
+</html>
