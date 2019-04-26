@@ -1,0 +1,22 @@
+service: BaseballFinal # NOTE: update this with your service name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  backend:
+    handler: handler.main
+    events:
+      - http:
+          path: main
+          method: post
