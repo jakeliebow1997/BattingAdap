@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>POST XMLHttpRequest - JS</title>
+
+<body>
+    <h2 id="title">POST XMLHttpRequest - JS</h2>
+    <p id="serverResponse"></p>
+</body>
+
+
+<script type = "text/javascript">
+    const request =  new XMLHttpRequest();
+    
+    request.onload = function() {
+        const serverResponse = document.getElementById("serverResponse");
+        serverResponse.innerHTML = this.responseText;
+    };
+
+
+    request.open("POST", "output.php");
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("batter:float&player name:string")
+</script>
